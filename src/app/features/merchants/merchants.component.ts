@@ -7,17 +7,3 @@ import { Component } from '@angular/core';
 	styleUrl: './merchants.component.scss',
 })
 export class MerchantsComponent {}
-
-export interface Merchant {
-	id: string;
-	createdAt: Date;
-	transactionLimit: number;
-	paymentMethods: string[];
-	companyName: string;
-	status: 'active' | 'inactive' | 'blocked';
-	nip: string;
-	companyLocation: string;
-	address: string;
-	email: string;
-	companyType: string;
-}
