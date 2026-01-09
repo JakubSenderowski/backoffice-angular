@@ -1,0 +1,67 @@
+[
+	{
+		"id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+		"createdAt": "2025-01-15T00:00:00.000Z",
+		"transactionLimit": 50000,
+		"paymentMethods": ["card", "blik", "cash"],
+		"companyName": "Piekarnia Słodka Chwila",
+		"status": "active",
+		"nip": "1234567890",
+		"companyLocation": "Warszawa",
+		"address": "ul. Cukiernicza 5",
+		"email": "kontakt@slodkachwila.pl",
+		"companyType": "Spożywcza"
+	},
+	{
+		"id": "9c858901-8a57-4791-81fe-4c455b099bc9",
+		"createdAt": "2024-11-03T00:00:00.000Z",
+		"transactionLimit": 150000,
+		"paymentMethods": ["card", "transfer"],
+		"companyName": "Tech Solutions Polska",
+		"status": "active",
+		"nip": "9876543210",
+		"companyLocation": "Kraków",
+		"address": "ul. Innowacji 12",
+		"email": "biuro@techsolutions.pl",
+		"companyType": "Technologiczna"
+	},
+	{
+		"id": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
+		"createdAt": "2025-02-10T00:00:00.000Z",
+		"transactionLimit": 20000,
+		"paymentMethods": ["cash"],
+		"companyName": "EcoGarden",
+		"status": "inactive",
+		"nip": "1122334455",
+		"companyLocation": "Poznań",
+		"address": "ul. Ogrodowa 7",
+		"email": "kontakt@ecogarden.pl",
+		"companyType": "Ogrodnicza"
+	},
+	{
+		"id": "16fd2706-8baf-433b-82eb-8c7fada847da",
+		"createdAt": "2023-09-20T00:00:00.000Z",
+		"transactionLimit": 100000,
+		"paymentMethods": ["card", "blik"],
+		"companyName": "Transport Express",
+		"status": "blocked",
+		"nip": "5566778899",
+		"companyLocation": "Gdańsk",
+		"address": "ul. Logistyczna 3",
+		"email": "info@transportexpress.pl",
+		"companyType": "Logistyczna"
+	},
+	{
+		"id": "123e4567-e89b-12d3-a456-426614174000",
+		"createdAt": "2025-01-05T00:00:00.000Z",
+		"transactionLimit": 80000,
+		"paymentMethods": ["card", "blik", "transfer"],
+		"companyName": "Kwiaciarnia Magnolia",
+		"status": "active",
+		"nip": "6677889900",
+		"companyLocation": "Łódź",
+		"address": "ul. Różana 2",
+		"email": "kontakt@magnolia.pl",
+		"companyType": "Florystyczna"
+	}
+]
