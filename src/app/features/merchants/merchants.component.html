@@ -1,4 +1,4 @@
-<nz-table #table [nzData]="merchants">
+<nz-table #table [nzData]="merchants" [nzPageSize]="10" [nzTotal]="merchants.length">
   <thead>
     <tr>
       <th [nzSortFn]="sortByName">Company name</th>

@@ -5,9 +5,10 @@ import { OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 @Component({
 	selector: 'app-merchants',
-	imports: [CommonModule, NzTableModule, NzTagModule],
+	imports: [CommonModule, NzTableModule, NzTagModule, NzPaginationModule],
 	templateUrl: './merchants.component.html',
 	styleUrl: './merchants.component.scss',
 })
