@@ -18,6 +18,7 @@ export class MerchantsComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.merchantService.getMerchants().subscribe((data) => (this.merchants = data));
+		console.log('Merchants loaded:', this.merchants);
 	}
 
 	getStatusColor(status: string): string {
@@ -32,4 +33,6 @@ export class MerchantsComponent implements OnInit {
 				return 'default';
 		}
 	}
+
+	sortByName = (a: Merchant, b: Merchant) => a.companyName.localeCompare(b.companyName);
 }
