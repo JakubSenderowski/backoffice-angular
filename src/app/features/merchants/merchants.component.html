@@ -1,4 +1,14 @@
-<nz-table #table [nzData]="merchants" [nzPageSize]="10" [nzTotal]="merchants.length">
+<nz-input-group [nzPrefix]="prefixIcon">
+  <input type="text" nz-input placeholder="Search by company name..." [(ngModel)]="searchValue"
+    (ngModelChange)="onSearch()" />
+</nz-input-group>
+
+<ng-template #prefixIcon>
+  <nz-icon nzType="search"></nz-icon>
+</ng-template>
+
+<br><br>
+<nz-table #table [nzData]="filteredMerchants" [nzPageSize]="10" [nzTotal]="merchants.length">
   <thead>
     <tr>
       <th [nzSortFn]="sortByName">Company name</th>
