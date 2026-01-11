@@ -17,7 +17,11 @@
       <td>{{item.companyName}}</td>
       <td>{{item.companyLocation}}</td>
       <td>{{item.transactionLimit}}</td>
-      <td>{{item.status}}</td>
+      <td>
+        <nz-tag [nzColor]="getStatusColor(item.status)">
+          {{item.status}}
+        </nz-tag>
+      </td>
       <td>{{item.paymentMethods}}</td>
       <td>{{item.nip}}</td>
       <td>{{item.email}}</td>
