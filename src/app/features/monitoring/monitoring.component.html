@@ -1,2 +1,72 @@
-<h1>Monitoring</h1>
-<p>Sprawdzaj i monitoruj pod kątem Fraud/AML</p>
+<div class="page-header">
+  <h1>Monitoring</h1>
+  <p>Track fraud detection and AML alerts</p>
+</div>
+
+<div class="monitoring-card">
+  <div class="search-section">
+    <nz-input-group [nzPrefix]="prefixIcon" nzSize="large" class="search-input">
+      <input type="text" nz-input placeholder="Search alerts..." [(ngModel)]="searchValue"
+        (ngModelChange)="onSearch()" />
+    </nz-input-group>
+
+    <ng-template #prefixIcon>
+      <nz-icon nzType="search"></nz-icon>
+    </ng-template>
+  </div>
+
+  <nz-table [nzData]="filteredAlerts" #table [nzPageSize]="10" [nzTotal]="filteredAlerts.length"
+    [nzShowTotal]="totalTemplate" class="monitoring-table">
+
+    <thead>
+      <tr>
+        <th>Alert ID</th>
+        <th>Type</th>
+        <th [nzSortFn]="sortBySeverity">Severity</th>
+        <th [nzSortFn]="sortByMerchant">Merchant</th>
+        <th>Transaction ID</th>
+        <th [nzSortFn]="sortByAmount">Amount</th>
+        <th>Reason</th>
+        <th [nzSortFn]="sortByDate">Detected</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let item of table.data">
+        <td class="alert-id">{{ item.id }}</td>
+        <td>
+          <nz-tag [nzColor]="getTypeColor(item.type)" class="type-tag">
+            {{ item.type | uppercase }}
+          </nz-tag>
+        </td>
+        <td>
+          <nz-tag [nzColor]="getSeverityColor(item.severity)" class="severity-tag">
+            {{ item.severity }}
+          </nz-tag>
+        </td>
+        <td class="merchant-name">{{ item.merchantName }}</td>
+        <td class="transaction-id">{{ item.transactionId }}</td>
+        <td class="amount">${{ item.amount | number }}</td>
+        <td class="reason">{{ item.reason }}</td>
+        <td>{{ item.detectedAt | date:'short' }}</td>
+        <td>
+          <nz-tag [nzColor]="getStatusColor(item.status)" class="status-tag">
+            {{ item.status | titlecase }}
+          </nz-tag>
+        </td>
+        <td>
+          <button nz-button nzType="primary" nzSize="small" (click)="reviewAlert(item)">
+            <nz-icon nzType="eye"></nz-icon>
+            Review
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+
+  <ng-template #totalTemplate let-total>
+    Total {{ total }} alerts
+  </ng-template>
+</div>

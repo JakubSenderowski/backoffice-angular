@@ -1,0 +1,206 @@
+.page-header {
+	margin-bottom: 24px;
+
+	h1 {
+		font-size: 32px;
+		font-weight: 600;
+		color: #1a1a1a;
+		margin: 0 0 4px 0;
+		letter-spacing: -0.5px;
+	}
+
+	p {
+		font-size: 15px;
+		color: #8e8e93;
+		margin: 0;
+	}
+}
+
+.monitoring-card {
+	background: white;
+	border-radius: 12px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+	padding: 24px;
+	animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.search-section {
+	margin-bottom: 24px;
+	max-width: 400px;
+}
+
+.search-input {
+	::ng-deep {
+		.ant-input-affix-wrapper {
+			border-radius: 10px;
+			border: 1.5px solid #e5e5e7;
+			transition: all 0.3s ease;
+
+			&:hover {
+				border-color: #007aff;
+			}
+
+			&:focus-within {
+				border-color: #007aff;
+				box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+			}
+
+			input {
+				font-size: 15px;
+
+				&::placeholder {
+					color: #c7c7cc;
+				}
+			}
+
+			.ant-input-prefix {
+				color: #98989d;
+			}
+		}
+	}
+}
+
+::ng-deep {
+	.monitoring-table {
+		.ant-table {
+			font-size: 14px;
+
+			thead > tr > th {
+				background: #f5f5f7;
+				color: #1a1a1a;
+				font-weight: 600;
+				font-size: 13px;
+				text-transform: uppercase;
+				letter-spacing: 0.5px;
+				border-bottom: 2px solid #e5e5e7;
+				padding: 16px;
+
+				&:hover {
+					background: #ebebed;
+				}
+			}
+
+			tbody > tr {
+				transition: all 0.2s ease;
+
+				&:hover {
+					background: #f9f9f9;
+				}
+
+				> td {
+					padding: 16px;
+					border-bottom: 1px solid #f0f0f0;
+					color: #1a1a1a;
+				}
+			}
+		}
+
+		.ant-pagination {
+			margin-top: 24px;
+
+			.ant-pagination-item {
+				border-radius: 6px;
+				border: 1.5px solid #e5e5e7;
+
+				&:hover {
+					border-color: #007aff;
+
+					a {
+						color: #007aff;
+					}
+				}
+
+				&.ant-pagination-item-active {
+					background: #007aff;
+					border-color: #007aff;
+
+					a {
+						color: white;
+					}
+				}
+			}
+
+			.ant-pagination-total-text {
+				color: #8e8e93;
+				font-size: 14px;
+			}
+		}
+
+		.ant-btn-sm {
+			height: 28px;
+			padding: 0 12px;
+			font-size: 13px;
+			border-radius: 6px;
+
+			nz-icon {
+				font-size: 12px;
+				margin-right: 4px;
+			}
+		}
+	}
+}
+
+.alert-id {
+	font-family: 'SF Mono', Monaco, monospace;
+	font-size: 13px;
+	color: #ff3b30;
+	font-weight: 600;
+}
+
+.type-tag {
+	border-radius: 6px;
+	border: none;
+	font-weight: 600;
+	padding: 4px 10px;
+	font-size: 11px;
+}
+
+.severity-tag {
+	border-radius: 6px;
+	border: none;
+	font-weight: 600;
+	padding: 4px 12px;
+	text-transform: uppercase;
+	font-size: 11px;
+}
+
+.status-tag {
+	border-radius: 6px;
+	border: none;
+	font-weight: 500;
+	padding: 4px 12px;
+}
+
+.merchant-name {
+	font-weight: 500;
+	color: #1a1a1a;
+}
+
+.transaction-id {
+	font-family: 'SF Mono', Monaco, monospace;
+	font-size: 13px;
+	color: #007aff;
+}
+
+.amount {
+	font-weight: 600;
+	color: #ff3b30;
+	font-variant-numeric: tabular-nums;
+}
+
+.reason {
+	font-size: 13px;
+	color: #636366;
+	max-width: 300px;
+}

@@ -1,0 +1,67 @@
+[
+	{
+		"id": "RPT-2025-001",
+		"name": "Monthly Financial Summary",
+		"type": "financial",
+		"dateRange": {
+			"start": "2025-01-01",
+			"end": "2025-01-31"
+		},
+		"status": "generated",
+		"createdAt": "2025-01-11T08:30:00Z",
+		"createdBy": "admin@backoffice.com",
+		"fileSize": "2.4 MB"
+	},
+	{
+		"id": "RPT-2025-002",
+		"name": "Transaction Volume Report",
+		"type": "transaction",
+		"dateRange": {
+			"start": "2025-01-01",
+			"end": "2025-01-10"
+		},
+		"status": "processing",
+		"createdAt": "2025-01-11T09:15:00Z",
+		"createdBy": "admin@backoffice.com",
+		"fileSize": null
+	},
+	{
+		"id": "RPT-2025-003",
+		"name": "Merchant Performance Q4 2024",
+		"type": "merchant",
+		"dateRange": {
+			"start": "2024-10-01",
+			"end": "2024-12-31"
+		},
+		"status": "generated",
+		"createdAt": "2025-01-05T14:20:00Z",
+		"createdBy": "analyst@backoffice.com",
+		"fileSize": "5.8 MB"
+	},
+	{
+		"id": "RPT-2025-004",
+		"name": "Fraud Detection Report",
+		"type": "fraud",
+		"dateRange": {
+			"start": "2025-01-01",
+			"end": "2025-01-11"
+		},
+		"status": "failed",
+		"createdAt": "2025-01-11T10:00:00Z",
+		"createdBy": "security@backoffice.com",
+		"fileSize": null
+	},
+	{
+		"id": "RPT-2025-005",
+		"name": "Settlement Reconciliation",
+		"type": "settlement",
+		"dateRange": {
+			"start": "2025-01-08",
+			"end": "2025-01-10"
+		},
+		"status": "generated",
+		"createdAt": "2025-01-10T16:45:00Z",
+		"createdBy": "finance@backoffice.com",
+		"fileSize": "1.2 MB"
+	}
+]

@@ -1,2 +1,56 @@
-<h1>Rozliczenia</h1>
-<p>Sprawdzaj rozliczenia transakcji i ich statusy</p>
+<div class="page-header">
+  <h1>Settlements</h1>
+  <p>Track transaction settlements and their statuses</p>
+</div>
+
+<div class="settlements-card">
+  <div class="search-section">
+    <nz-input-group [nzPrefix]="prefixIcon" nzSize="large" class="search-input">
+      <input type="text" nz-input placeholder="Search by merchant or transaction ID..." [(ngModel)]="searchValue"
+        (ngModelChange)="onSearch()" />
+    </nz-input-group>
+
+    <ng-template #prefixIcon>
+      <nz-icon nzType="search"></nz-icon>
+    </ng-template>
+  </div>
+
+  <nz-table [nzData]="filteredSettlements" #table [nzPageSize]="10" [nzTotal]="filteredSettlements.length"
+    [nzShowTotal]="totalTemplate" class="settlements-table">
+
+    <thead>
+      <tr>
+        <th>Transaction ID</th>
+        <th [nzSortFn]="sortByMerchant">Merchant</th>
+        <th [nzSortFn]="sortByAmount">Amount</th>
+        <th [nzSortFn]="sortByStatus">Status</th>
+        <th>Payment Method</th>
+        <th [nzSortFn]="sortByDate">Transaction Date</th>
+        <th>Settlement Date</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let item of table.data">
+        <td class="transaction-id">{{ item.id }}</td>
+        <td class="merchant-name">{{ item.merchantName }}</td>
+        <td class="amount">{{ item.currency }} ${{ item.amount | number }}</td>
+        <td>
+          <nz-tag [nzColor]="getStatusColor(item.status)" class="status-tag">
+            {{ item.status }}
+          </nz-tag>
+        </td>
+        <td>{{ item.paymentMethod }}</td>
+        <td>{{ item.transactionDate | date:'short' }}</td>
+        <td>
+          <span *ngIf="item.settlementDate">{{ item.settlementDate | date:'short' }}</span>
+          <span *ngIf="!item.settlementDate" class="pending-text">Pending</span>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+
+  <ng-template #totalTemplate let-total>
+    Total {{ total }} transactions
+  </ng-template>
+</div>

@@ -1,2 +1,72 @@
-<h1>Raporty</h1>
-<p>Twórz oraz generuj raporty</p>
+<div class="page-header">
+  <h1>Reports</h1>
+  <p>Generate and download business reports</p>
+</div>
+
+<div class="reports-card">
+  <div class="search-section">
+    <nz-input-group [nzPrefix]="prefixIcon" nzSize="large" class="search-input">
+      <input type="text" nz-input placeholder="Search reports..." [(ngModel)]="searchValue"
+        (ngModelChange)="onSearch()" />
+    </nz-input-group>
+
+    <ng-template #prefixIcon>
+      <nz-icon nzType="search"></nz-icon>
+    </ng-template>
+  </div>
+
+  <nz-table [nzData]="filteredReports" #table [nzPageSize]="10" [nzTotal]="filteredReports.length"
+    [nzShowTotal]="totalTemplate" class="reports-table">
+
+    <thead>
+      <tr>
+        <th>Report ID</th>
+        <th [nzSortFn]="sortByName">Report Name</th>
+        <th [nzSortFn]="sortByType">Type</th>
+        <th>Date Range</th>
+        <th [nzSortFn]="sortByStatus">Status</th>
+        <th [nzSortFn]="sortByDate">Created</th>
+        <th>Created By</th>
+        <th>Size</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let item of table.data">
+        <td class="report-id">{{ item.id }}</td>
+        <td class="report-name">{{ item.name }}</td>
+        <td>
+          <nz-tag [nzColor]="getTypeColor(item.type)" class="type-tag">
+            {{ item.type }}
+          </nz-tag>
+        </td>
+        <td class="date-range">
+          {{ item.dateRange.start | date:'MMM d' }} - {{ item.dateRange.end | date:'MMM d, y' }}
+        </td>
+        <td>
+          <nz-tag [nzColor]="getStatusColor(item.status)" class="status-tag">
+            {{ item.status }}
+          </nz-tag>
+        </td>
+        <td>{{ item.createdAt | date:'short' }}</td>
+        <td class="email">{{ item.createdBy }}</td>
+        <td>
+          <span *ngIf="item.fileSize">{{ item.fileSize }}</span>
+          <span *ngIf="!item.fileSize" class="na-text">N/A</span>
+        </td>
+        <td>
+          <button nz-button nzType="primary" nzSize="small" [disabled]="item.status !== 'generated'"
+            (click)="downloadReport(item)">
+            <nz-icon nzType="download"></nz-icon>
+            Download
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+
+  <ng-template #totalTemplate let-total>
+    Total {{ total }} reports
+  </ng-template>
+</div>

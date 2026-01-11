@@ -1,0 +1,57 @@
+[
+	{
+		"id": "TXN-2025-001",
+		"merchantId": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+		"merchantName": "Golden Crust Bakery Ltd",
+		"amount": 15420,
+		"currency": "USD",
+		"status": "completed",
+		"transactionDate": "2025-01-10T14:30:00Z",
+		"settlementDate": "2025-01-11T09:00:00Z",
+		"paymentMethod": "card"
+	},
+	{
+		"id": "TXN-2025-002",
+		"merchantId": "9c858901-8a57-4791-81fe-4c455b099bc9",
+		"merchantName": "Sakura Tech Solutions",
+		"amount": 89500,
+		"currency": "USD",
+		"status": "pending",
+		"transactionDate": "2025-01-11T10:15:00Z",
+		"settlementDate": null,
+		"paymentMethod": "transfer"
+	},
+	{
+		"id": "TXN-2025-003",
+		"merchantId": "16fd2706-8baf-433b-82eb-8c7fada847da",
+		"merchantName": "Atlantic Freight Services",
+		"amount": 34200,
+		"currency": "USD",
+		"status": "completed",
+		"transactionDate": "2025-01-09T16:45:00Z",
+		"settlementDate": "2025-01-10T09:00:00Z",
+		"paymentMethod": "card"
+	},
+	{
+		"id": "TXN-2025-004",
+		"merchantId": "123e4567-e89b-12d3-a456-426614174000",
+		"merchantName": "Amazon Bloom Flowers",
+		"amount": 12800,
+		"currency": "USD",
+		"status": "failed",
+		"transactionDate": "2025-01-11T11:20:00Z",
+		"settlementDate": null,
+		"paymentMethod": "blik"
+	},
+	{
+		"id": "TXN-2025-005",
+		"merchantId": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
+		"merchantName": "Green Savannah Farms",
+		"amount": 8900,
+		"currency": "USD",
+		"status": "completed",
+		"transactionDate": "2025-01-08T13:00:00Z",
+		"settlementDate": "2025-01-09T09:00:00Z",
+		"paymentMethod": "cash"
+	}
+]

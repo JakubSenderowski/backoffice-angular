@@ -1,0 +1,67 @@
+[
+	{
+		"id": "ALT-2025-001",
+		"type": "fraud",
+		"severity": "high",
+		"merchantId": "16fd2706-8baf-433b-82eb-8c7fada847da",
+		"merchantName": "Atlantic Freight Services",
+		"transactionId": "TXN-2025-089",
+		"amount": 95000,
+		"reason": "Unusual transaction amount exceeds merchant's average by 300%",
+		"detectedAt": "2025-01-11T11:23:00Z",
+		"status": "under_review",
+		"assignedTo": "fraud-team@backoffice.com"
+	},
+	{
+		"id": "ALT-2025-002",
+		"type": "aml",
+		"severity": "critical",
+		"merchantId": "9c858901-8a57-4791-81fe-4c455b099bc9",
+		"merchantName": "Sakura Tech Solutions",
+		"transactionId": "TXN-2025-103",
+		"amount": 150000,
+		"reason": "Multiple large transactions from high-risk jurisdiction",
+		"detectedAt": "2025-01-11T09:45:00Z",
+		"status": "escalated",
+		"assignedTo": "aml-team@backoffice.com"
+	},
+	{
+		"id": "ALT-2025-003",
+		"type": "fraud",
+		"severity": "medium",
+		"merchantId": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+		"merchantName": "Golden Crust Bakery Ltd",
+		"transactionId": "TXN-2025-067",
+		"amount": 8500,
+		"reason": "Card verification failed multiple times",
+		"detectedAt": "2025-01-10T16:30:00Z",
+		"status": "resolved",
+		"assignedTo": "fraud-team@backoffice.com"
+	},
+	{
+		"id": "ALT-2025-004",
+		"type": "aml",
+		"severity": "low",
+		"merchantId": "123e4567-e89b-12d3-a456-426614174000",
+		"merchantName": "Amazon Bloom Flowers",
+		"transactionId": "TXN-2025-045",
+		"amount": 12000,
+		"reason": "Transaction pattern matches known structuring behavior",
+		"detectedAt": "2025-01-11T08:15:00Z",
+		"status": "under_review",
+		"assignedTo": "aml-team@backoffice.com"
+	},
+	{
+		"id": "ALT-2025-005",
+		"type": "fraud",
+		"severity": "high",
+		"merchantId": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
+		"merchantName": "Green Savannah Farms",
+		"transactionId": "TXN-2025-078",
+		"amount": 45000,
+		"reason": "IP address mismatch with merchant's registered location",
+		"detectedAt": "2025-01-11T10:00:00Z",
+		"status": "under_review",
+		"assignedTo": "fraud-team@backoffice.com"
+	}
+]
