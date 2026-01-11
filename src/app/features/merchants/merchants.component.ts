@@ -35,4 +35,7 @@ export class MerchantsComponent implements OnInit {
 	}
 
 	sortByName = (a: Merchant, b: Merchant) => a.companyName.localeCompare(b.companyName);
+	sortByLimit = (a: Merchant, b: Merchant) => a.transactionLimit - b.transactionLimit;
+	sortByStatus = (a: Merchant, b: Merchant) => a.status.localeCompare(b.status);
+	sortByLocation = (a: Merchant, b: Merchant) => a.companyLocation.localeCompare(b.companyLocation);
 }
