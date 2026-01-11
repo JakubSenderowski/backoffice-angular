@@ -1,4 +1,4 @@
-.register-container {
+.twofa-container {
 	min-height: 100vh;
 	width: 100vw;
 	display: flex;
@@ -13,7 +13,7 @@
 	bottom: 0;
 }
 
-.register-card {
+.twofa-card {
 	width: 100%;
 	max-width: 420px;
 	background: white;
@@ -34,7 +34,7 @@
 	}
 }
 
-.register-header {
+.twofa-header {
 	text-align: center;
 	margin-bottom: 40px;
 
@@ -53,52 +53,57 @@
 	}
 }
 
-nz-form-item {
-	margin-bottom: 16px;
-}
-
-.login-link {
+.code-input {
+	font-size: 28px !important;
 	text-align: center;
-	margin-top: 24px;
-	font-size: 14px;
-	color: #8e8e93;
+	letter-spacing: 12px;
+	font-weight: 600;
+	height: 64px !important;
+	border-radius: 12px !important;
+	border: 1.5px solid #e5e5e7 !important;
+	transition: all 0.3s ease;
+	font-family: 'SF Mono', Monaco, monospace;
 
-	a {
-		color: #007aff;
-		text-decoration: none;
-		font-weight: 500;
+	&:hover {
+		border-color: #007aff !important;
+	}
 
-		&:hover {
-			text-decoration: underline;
-		}
+	&:focus {
+		border-color: #007aff !important;
+		box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1) !important;
+		outline: none;
+	}
+
+	&::placeholder {
+		color: #d1d1d6;
+		letter-spacing: 8px;
 	}
 }
 
+.hint {
+	text-align: center;
+	margin-top: 20px;
+	padding: 12px;
+	background: #f5f5f7;
+	border-radius: 8px;
+	font-size: 13px;
+	color: #8e8e93;
+
+	strong {
+		color: #007aff;
+		font-weight: 600;
+		font-size: 16px;
+		font-family: 'SF Mono', Monaco, monospace;
+	}
+}
+
+.submit-button {
+	margin-top: 24px;
+	margin-bottom: 0;
+}
+
 ::ng-deep {
-	.register-card {
-		.ant-input-affix-wrapper {
-			border-radius: 12px;
-			border: 1.5px solid #e5e5e7;
-			transition: all 0.3s ease;
-
-			&:hover {
-				border-color: #007aff;
-			}
-
-			&:focus-within {
-				border-color: #007aff;
-				box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
-			}
-
-			input {
-				font-size: 15px;
-
-				&::placeholder {
-					color: #c7c7cc;
-				}
-			}
-		}
-
+	.twofa-card {
 		.ant-btn-primary {
 			height: 48px;
 			border-radius: 12px;
@@ -123,9 +128,4 @@ nz-form-item {
 			}
 		}
 	}
-}
-
-.register-button {
-	margin-top: 24px;
-	margin-bottom: 0;
 }

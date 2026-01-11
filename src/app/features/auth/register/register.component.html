@@ -1,1 +1,60 @@
-<p>register works!</p>
+<div class="register-container">
+  <div class="register-card">
+    <div class="register-header">
+      <h1>Create Account</h1>
+      <p>Sign up to get started</p>
+    </div>
+
+    <form nz-form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please enter your first name">
+          <nz-input-group nzPrefixIcon="user" nzSize="large">
+            <input nz-input type="text" formControlName="firstName" placeholder="First name" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please enter your last name">
+          <nz-input-group nzPrefixIcon="user" nzSize="large">
+            <input nz-input type="text" formControlName="lastName" placeholder="Last name" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please enter a valid email">
+          <nz-input-group nzPrefixIcon="mail" nzSize="large">
+            <input nz-input type="email" formControlName="email" placeholder="Email address" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Password must be at least 6 characters">
+          <nz-input-group nzPrefixIcon="lock" nzSize="large">
+            <input nz-input type="password" formControlName="password" placeholder="Password" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Passwords do not match">
+          <nz-input-group nzPrefixIcon="lock" nzSize="large">
+            <input nz-input type="password" formControlName="confirmPassword" placeholder="Confirm password" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item class="register-button">
+        <button nz-button nzType="primary" nzSize="large" nzBlock [disabled]="registerForm.invalid">
+          Create Account
+        </button>
+      </nz-form-item>
+
+      <div class="login-link">
+        Already have an account? <a routerLink="/auth/login">Sign in</a>
+      </div>
+    </form>
+  </div>
+</div>

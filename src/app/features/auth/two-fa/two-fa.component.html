@@ -1,0 +1,27 @@
+<div class="twofa-container">
+  <div class="twofa-card">
+    <div class="twofa-header">
+      <h1>Verification Code</h1>
+      <p>Enter the 6-digit code sent to your email</p>
+    </div>
+
+    <form nz-form (ngSubmit)="onSubmit()">
+      <nz-form-item>
+        <nz-form-control>
+          <input nz-input type="text" [(ngModel)]="code" name="code" placeholder="000000" maxlength="6"
+            class="code-input" />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item class="submit-button">
+        <button nz-button nzType="primary" nzSize="large" nzBlock [disabled]="code.length !== 6">
+          Verify
+        </button>
+      </nz-form-item>
+
+      <div class="hint">
+        Valid code: <strong>111111</strong>
+      </div>
+    </form>
+  </div>
+</div>

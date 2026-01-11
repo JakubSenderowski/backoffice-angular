@@ -1,4 +1,4 @@
-<nz-layout class="app-layout">
+<nz-layout class="app-layout" *ngIf="showLayout">
   <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed"
     [nzTrigger]="null">
     <div class="sidebar-logo">
@@ -37,6 +37,10 @@
           <span>Monitoring</span>
         </a>
       </li>
+      <li nz-menu-item (click)="logout()">
+        <nz-icon nzType="logout"></nz-icon>
+        <span>Logout</span>
+      </li>
     </ul>
   </nz-sider>
   <nz-layout>
@@ -54,3 +58,5 @@
     </nz-content>
   </nz-layout>
 </nz-layout>
+
+<router-outlet *ngIf="!showLayout"></router-outlet>

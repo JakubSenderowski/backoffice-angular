@@ -12,6 +12,9 @@ import {
 	MenuUnfoldOutline,
 	MailOutline,
 	LockOutline,
+	LogoutOutline,
+	UserOutline,
+	ArrowLeftOutline,
 } from '@ant-design/icons-angular/icons';
 
 const icons: IconDefinition[] = [
@@ -24,6 +27,9 @@ const icons: IconDefinition[] = [
 	MenuUnfoldOutline,
 	MailOutline,
 	LockOutline,
+	LogoutOutline,
+	UserOutline,
+	ArrowLeftOutline,
 ];
 
 export const provideNzIcons = () => importProvidersFrom(NzIconModule.forRoot(icons));
