@@ -61,9 +61,9 @@ export class DashboardComponent implements OnInit {
 					data: this.stats!.revenueChart.map((d) => d.amount),
 					type: 'line',
 					smooth: true,
-					lineStyle: { color: '#007aff', width: 3 },
+					lineStyle: { color: '#3a4d6b', width: 3 },
 					areaStyle: { color: 'rgba(0, 122, 255, 0.1)' },
-					itemStyle: { color: '#007aff' },
+					itemStyle: { color: '#3a4d6b' },
 				},
 			],
 		});
@@ -84,7 +84,7 @@ export class DashboardComponent implements OnInit {
 						value: item.value,
 						name: item.name,
 						itemStyle: {
-							color: ['#007aff', '#34c759', '#ff9500', '#ff3b30'][index],
+							color: ['#3a4d6b', '#34c759', '#ff9500', '#ff3b30'][index],
 						},
 					})),
 				},
@@ -116,7 +116,7 @@ export class DashboardComponent implements OnInit {
 				{
 					type: 'bar',
 					data: this.stats!.topMerchants.map((m) => m.volume),
-					itemStyle: { color: '#007aff', borderRadius: [0, 4, 4, 0] },
+					itemStyle: { color: '#3a4d6b', borderRadius: [0, 4, 4, 0] },
 					barMaxWidth: 30,
 				},
 			],

@@ -65,11 +65,11 @@
 	font-family: 'SF Mono', Monaco, monospace;
 
 	&:hover {
-		border-color: #007aff !important;
+		border-color: #3a4d6b !important;
 	}
 
 	&:focus {
-		border-color: #007aff !important;
+		border-color: #3a4d6b !important;
 		box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1) !important;
 		outline: none;
 	}
@@ -90,7 +90,7 @@
 	color: #8e8e93;
 
 	strong {
-		color: #007aff;
+		color: #3a4d6b;
 		font-weight: 600;
 		font-size: 16px;
 		font-family: 'SF Mono', Monaco, monospace;
@@ -107,7 +107,7 @@
 		.ant-btn-primary {
 			height: 48px;
 			border-radius: 12px;
-			background: #007aff;
+			background: #3a4d6b;
 			border: none;
 			font-size: 16px;
 			font-weight: 500;
