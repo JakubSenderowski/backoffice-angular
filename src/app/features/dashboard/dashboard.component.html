@@ -1,2 +1,78 @@
-<h1>Panel główny</h1>
-<p>Tutaj wykresy oraz statystyki</p>
+<div class="page-header">
+  <h1>Dashboard</h1>
+  <p>Overview of metriccs</p>
+</div>
+
+<div *ngIf="stats" class="dashboard-content">
+  <div nz-row [nzGutter]="[16, 16]" class="kpi-section">
+    <div nz-col [nzSpan]="6">
+      <nz-card class="kpi-card">
+        <nz-statistic [nzValue]="stats.kpiCards.totalMerchants" nzTitle="Total Merchants" [nzPrefix]="merchantIcon">
+        </nz-statistic>
+        <ng-template #merchantIcon>
+          <span class="kpi-icon blue">👥</span>
+        </ng-template>
+      </nz-card>
+    </div>
+
+    <div nz-col [nzSpan]="6">
+      <nz-card class="kpi-card">
+        <nz-statistic [nzValue]="stats.kpiCards.activeTransactions" nzTitle="Active Transactions"
+          [nzPrefix]="transactionIcon">
+        </nz-statistic>
+        <ng-template #transactionIcon>
+          <span class="kpi-icon orange">⚡</span>
+        </ng-template>
+      </nz-card>
+    </div>
+
+    <div nz-col [nzSpan]="6">
+      <nz-card class="kpi-card">
+        <nz-statistic [nzValue]="stats.kpiCards.totalRevenue" [nzPrefix]="'$'" nzTitle="Total Revenue"
+          [nzValueTemplate]="revenueIcon">
+        </nz-statistic>
+        <ng-template #revenueIcon>
+          <span class="kpi-icon green">💰</span>
+          <span class="revenue-value">${{ stats.kpiCards.totalRevenue | number }}</span>
+        </ng-template>
+      </nz-card>
+    </div>
+
+    <div nz-col [nzSpan]="6">
+      <nz-card class="kpi-card">
+        <nz-statistic [nzValue]="stats.kpiCards.successRate" [nzSuffix]="'%'" nzTitle="Success Rate"
+          [nzPrefix]="successIcon">
+        </nz-statistic>
+        <ng-template #successIcon>
+          <span class="kpi-icon green">✓</span>
+        </ng-template>
+      </nz-card>
+    </div>
+  </div>
+
+  <div nz-row [nzGutter]="[16, 16]" class="charts-section">
+    <div nz-col [nzSpan]="16">
+      <nz-card nzTitle="Revenue Trend (Last 7 Days)" class="chart-card">
+        <div id="revenueChart" style="height: 350px;"></div>
+      </nz-card>
+    </div>
+
+    <div nz-col [nzSpan]="8">
+      <nz-card nzTitle="Payment Methods" class="chart-card">
+        <div id="paymentMethodsChart" style="height: 350px;"></div>
+      </nz-card>
+    </div>
+  </div>
+
+  <div nz-row [nzGutter]="[16, 16]" class="charts-section">
+    <div nz-col [nzSpan]="24">
+      <nz-card nzTitle="Top 5 Merchants by Volume" class="chart-card">
+        <div id="topMerchantsChart" style="height: 300px;"></div>
+      </nz-card>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!stats" class="loading">
+  Loading dashboard...
+</div>

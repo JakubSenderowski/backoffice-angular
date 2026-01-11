@@ -1,0 +1,30 @@
+{
+	"kpiCards": {
+		"totalMerchants": 127,
+		"activeTransactions": 1543,
+		"totalRevenue": 2847650,
+		"successRate": 98.7
+	},
+	"revenueChart": [
+		{ "date": "2025-01-05", "amount": 345000 },
+		{ "date": "2025-01-06", "amount": 412000 },
+		{ "date": "2025-01-07", "amount": 389000 },
+		{ "date": "2025-01-08", "amount": 456000 },
+		{ "date": "2025-01-09", "amount": 498000 },
+		{ "date": "2025-01-10", "amount": 521000 },
+		{ "date": "2025-01-11", "amount": 427000 }
+	],
+	"paymentMethods": [
+		{ "name": "Card", "value": 4500 },
+		{ "name": "BLIK", "value": 2800 },
+		{ "name": "Transfer", "value": 1900 },
+		{ "name": "Cash", "value": 600 }
+	],
+	"topMerchants": [
+		{ "name": "Sakura Tech", "volume": 892000 },
+		{ "name": "Golden Crust", "volume": 654000 },
+		{ "name": "Atlantic Freight", "volume": 543000 },
+		{ "name": "Amazon Bloom", "volume": 421000 },
+		{ "name": "Green Savannah", "volume": 337000 }
+	]
+}

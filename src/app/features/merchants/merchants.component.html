@@ -1,43 +1,63 @@
-<nz-input-group [nzPrefix]="prefixIcon">
-  <input type="text" nz-input placeholder="Search by company name..." [(ngModel)]="searchValue"
-    (ngModelChange)="onSearch()" />
-</nz-input-group>
+<div class="page-header">
+  <h1>Merchants</h1>
+  <p>Manage merchant accounts and their statuses</p>
+</div>
 
-<ng-template #prefixIcon>
-  <nz-icon nzType="search"></nz-icon>
-</ng-template>
+<div class="merchants-card">
+  <div class="search-section">
+    <nz-input-group [nzPrefix]="prefixIcon" nzSize="large" class="search-input">
+      <input type="text" nz-input placeholder="Search merchants..." [(ngModel)]="searchValue"
+        (ngModelChange)="onSearch()" />
+    </nz-input-group>
 
-<br><br>
-<nz-table #table [nzData]="filteredMerchants" [nzPageSize]="10" [nzTotal]="merchants.length">
-  <thead>
-    <tr>
-      <th [nzSortFn]="sortByName">Company name</th>
-      <th [nzSortFn]="sortByLocation">Location</th>
-      <th [nzSortFn]="sortByLimit">Transaction limit</th>
-      <th [nzSortFn]="sortByStatus">Status</th>
-      <th>Payment methods</th>
-      <th>Nip</th>
-      <th>Email</th>
-      <th>Address</th>
-      <th>Company type</th>
-    </tr>
-  </thead>
+    <ng-template #prefixIcon>
+      <nz-icon nzType="search"></nz-icon>
+    </ng-template>
+  </div>
 
-  <tbody>
-    <tr *ngFor="let item of table.data">
-      <td>{{ item.companyName }}</td>
-      <td>{{ item.companyLocation }}</td>
-      <td>{{ item.transactionLimit }}</td>
-      <td>
-        <nz-tag [nzColor]="getStatusColor(item.status)">
-          {{ item.status }}
-        </nz-tag>
-      </td>
-      <td>{{ item.paymentMethods }}</td>
-      <td>{{ item.nip }}</td>
-      <td>{{ item.email }}</td>
-      <td>{{ item.address }}</td>
-      <td>{{ item.companyType }}</td>
-    </tr>
-  </tbody>
-</nz-table>
+  <nz-table [nzData]="filteredMerchants" #table [nzPageSize]="10" [nzTotal]="filteredMerchants.length"
+    [nzShowTotal]="totalTemplate" class="merchants-table">
+
+    <thead>
+      <tr>
+        <th [nzSortFn]="sortByName">Company Name</th>
+        <th [nzSortFn]="sortByLocation">Location</th>
+        <th [nzSortFn]="sortByLimit">Transaction Limit</th>
+        <th [nzSortFn]="sortByStatus">Status</th>
+        <th>Payment Methods</th>
+        <th>NIP</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Company Type</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let item of table.data">
+        <td class="company-name">{{ item.companyName }}</td>
+        <td>{{ item.companyLocation }}</td>
+        <td class="amount">${{ item.transactionLimit | number }}</td>
+        <td>
+          <nz-tag [nzColor]="getStatusColor(item.status)" class="status-tag">
+            {{ item.status }}
+          </nz-tag>
+        </td>
+        <td>
+          <div class="payment-methods">
+            <nz-tag *ngFor="let method of item.paymentMethods" class="method-tag">
+              {{ method }}
+            </nz-tag>
+          </div>
+        </td>
+        <td class="nip">{{ item.nip }}</td>
+        <td class="email">{{ item.email }}</td>
+        <td>{{ item.address }}</td>
+        <td>{{ item.companyType }}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+
+  <ng-template #totalTemplate let-total>
+    Total {{ total }} merchants
+  </ng-template>
+</div>
